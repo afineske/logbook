@@ -1,0 +1,28 @@
+{
+    "name": "fineskecom/logbook-template",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://fineske.com",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^11.5",
+        "typo3/cms-rte-ckeditor": "^11.5",
+        "typo3/cms-fluid-styled-content": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fineskecom\\LogbookTemplate\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "logbook_template"
+        }
+    },
+    "replace": {
+        "logbook_template": "self.version",
+        "typo3-ter/logbook_template": "self.version"
+    }
+}

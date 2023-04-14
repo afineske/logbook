@@ -1,0 +1,34 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            default {
+                title = LLL:EXT:logbook_template/Resources/Private/Language/locallang_be.xlf:backend_layout.default
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = MainContent
+                                        colspan = 2
+                                        colPos = 0
+                                    }
+                                    2 {
+                                        name = Sidebar
+                                        colPos = 2
+                                    }
+                                }
+                            }
+                        }
+                     }
+                }
+                icon = EXT:logbook_template/Resources/Public/Images/BackendLayouts/default.png
+            }
+        }
+    }
+}

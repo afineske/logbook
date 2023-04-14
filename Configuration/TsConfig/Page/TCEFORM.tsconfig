@@ -1,0 +1,13 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+
+    }
+    tt_content {
+        header_layout {
+            addItems.10 = H5 Widget Title
+        }
+    }
+}

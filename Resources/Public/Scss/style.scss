@@ -1,0 +1,27 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Project Name
+VERSION:	Versoin Number
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+@import '../../../../../../vendor/twbs/bootstrap/scss/bootstrap.scss';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'typography';
+
+@import 'buttons';
+
+@import 'common';
+
+@import 'templates/fonts.scss';
+
+@import 'templates/navigation.scss';
+
+@import 'templates/main.scss';
