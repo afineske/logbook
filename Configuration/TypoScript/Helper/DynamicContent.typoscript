@@ -29,11 +29,38 @@ lib.dynamicContent {
                 ifEmpty = 0
             }
         }
+
+        slide.cObject = TEXT
+        slide.cObject {
+            override {
+                field = slide
+                if {
+                    isInList.field = slide
+                    value = -1, 0, 1, 2
+                }
+            }
+
+            ifEmpty = 0
+        }
+
+        collect.cObject = TEXT
+        collect.cObject {
+            field = collect
+            ifEmpty = 0
+        }
+
+        collectReverse.cObject = TEXT
+        collectReverse.cObject {
+            field = collectReverse
+            ifEmpty = 0
+        }
+
         pageUid.cObject = TEXT
         pageUid.cObject {
             field = pageUid
             ifEmpty.data = TSFE:id
         }
+
         contentFromPid.cObject = TEXT
         contentFromPid.cObject {
             data = DB:pages:{register:pageUid}:content_from_pid
@@ -43,21 +70,11 @@ lib.dynamicContent {
         wrap.cObject {
             field = wrap
         }
-        collect.cObject = TEXT
-        collect.cObject {
-            field = collect
-            ifEmpty = 0
-        }
-        collectReverse.cObject = TEXT
-        collectReverse.cObject {
-            field = collect
-            ifEmpty = 0
-        }
     }
     20 = CONTENT
     20 {
         table = tt_content
-        
+
         select {
             includeRecordsWithoutDefaultTranslation = 1
             orderBy = sorting
@@ -66,15 +83,28 @@ lib.dynamicContent {
             pidInList.data = register:pageUid
             pidInList.override.data = register:contentFromPid
         }
+
+        slide = {register:slide}
+        slide {
+            insertData = 1
+            collect = {register:collect}
+            collect.insertData = 1
+            collectReverse = {register:collectReverse}
+            collectReverse.insertData = 1
+        }
+
+        renderObj {
+            stdWrap {
+                dataWrap = {register:elementWrap}
+                required = 1
+            }
+        }
+
         stdWrap {
             dataWrap = {register:wrap}
             required = 1
         }
-        collect = {register:collect}
-        collect.insertData = 1
-        collectReverse = {register:collectReverse}
-        collectReverse.insertData = 1
     }
-    
+
     90 = RESTORE_REGISTER
 }
