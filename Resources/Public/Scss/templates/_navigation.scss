@@ -79,6 +79,10 @@
         color: $primary-color !important;
         background: transparent;
       }
+      active,
+      &:active {
+        background-color: red !important; 
+      }
     }
   }
 }

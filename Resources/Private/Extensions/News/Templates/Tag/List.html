@@ -13,6 +13,7 @@
 	<f:if condition="{tags}">
 		<ul class="list-inline widget-list-inline">
 			<f:for each="{tags}" as="tag">
+				
 				<li class="list-inline-item">
 					{n:tag.count(tagUid:tag.uid) -> f:variable(name: 'tagUsageCount')}
 					<f:if condition="{tag.uid} == {overwriteDemand.tags}">
@@ -28,7 +29,7 @@
 						</f:else>
 					</f:if>
 
-					<f:if condition="{tagUsageCount}">({tagUsageCount})</f:if>
+					
 				</li>
 			</f:for>
 		</ul>

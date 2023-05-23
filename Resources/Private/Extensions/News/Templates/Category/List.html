@@ -22,7 +22,6 @@
 </f:section>
 
 <f:section name="categoryTree">
-<f:debug>{_all}</f:debug>
 	<ul class="list-unstyled widget-list">
 		<f:for each="{categories}" as="category">
 			{n:category.count(categoryUid:category.item.uid) -> f:variable(name: 'categoryUsageCount')}
@@ -35,7 +34,7 @@
 					</f:then>
 					<f:else>
 						<f:link.page title="{category.item.title}" class="d-flex" pageUid="{category.item.shortcut}"
-							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">{category.item.title} <f:if condition="{categoryUsageCount}"><small class="ml-auto">({categoryUsageCount})</small></f:if>
+							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">{category.item.title} <f:if condition="{categoryUsageCount}"><small class="ms-auto">({categoryUsageCount})</small></f:if>
 						</f:link.page>
 					</f:else>
 				</f:if>
