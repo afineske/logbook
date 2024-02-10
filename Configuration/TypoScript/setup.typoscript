@@ -147,6 +147,7 @@ page {
         logbook_template_layout = EXT:logbook_template/Resources/Public/Css/style.min.css
         plugins_themify-icons = EXT:logbook_template/Resources/Public/Plugins/themify-icons/themify-icons.css
         slick = EXT:logbook_template/Resources/Public/Plugins/slick/slick.css
+        magnific = EXT:logbook_template/Resources/Public/Plugins/Magnific-Popup/magnific-popup.css
     }
 
     includeJSLibs {
@@ -162,6 +163,7 @@ page {
 
         bootstrap = EXT:logbook_template/Resources/Public/JavaScript/Dist/bootstrap.bundle.min.js
         slick = EXT:logbook_template/Resources/Public/Plugins/slick/slick.min.js
+        magnific = EXT:logbook_template/Resources/Public/Plugins/Magnific-Popup/jquery.magnific-popup.min.js
     }
 
     includeJSFooter {
@@ -206,5 +208,35 @@ config {
     compressCss = 0
     concatenateJs = 0
     concatenateCss = 0
+
+    contentObjectExceptionHandler = 0 
 }
-config.contentObjectExceptionHandler = 0 
+
+################
+####  NEWS  ####
+################
+plugin.tx_news.settings {
+    displayDummyIfNoMedia = 0
+    list.media {
+        maxWidth = 1024  
+        maxHeight = 980
+    image {
+        maxWidth = 1024 
+        maxHeight = 980
+
+    }
+    
+    }
+    list.paginate {
+        insertAbove = 1
+        insertBelow = 0
+        maximumNumberOfLinks = 10
+    }
+}
+plugin.tx_news.settings.detail.media.image.lightbox {
+    enabled = 1
+    class = lightbox
+    prefix = test
+    width = 1024
+    height = 768
+}

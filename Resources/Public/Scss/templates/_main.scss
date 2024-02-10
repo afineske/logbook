@@ -646,3 +646,31 @@
     display: block;
   }
 }
+.news-galerie {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  img {
+    max-width: 15rem;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 1rem;
+    transition: scale 250ms ease-in-out;
+    vertical-align: bottom;
+    -webkit-box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3); 
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3);
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+
+ .mfp-s-loading .mfp-arrow { 
+  display: none;
+}
