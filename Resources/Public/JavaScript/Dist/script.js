@@ -1,9 +1,30 @@
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
+jQuery(document).ready(function($) {
+    
+    
+	$(function() {
+	 $('a[rel*="lightbox"]').magnificPopup({
+		 type: 'image',
+		 tLoading: 'Lade Bild...',
+		 tClose: 'Schließen (Esc)',
+		 image: {
+			 titleSrc: function(item) {
+				 var title = item.el.attr('title');
+				 var description = item.el.attr('alt');
+				 return ((title)?title:'') + ((description)?'<small>'+ description +'</small>':'');
+			 }
+		 },
+		 gallery: {
+			 enabled: true,
+			 navigateByImgClick: true,
+			 preload: [0,1],
+			 tCounter: '%curr% von %total%',
+			 tPrev: 'Zurück (Linke Pfeiltaste)',
+			 tNext: 'Vorwärts (Rechte Pfeiltaste)'
+		 },
+	 });
+ });
+
+});
 
 (function ($) {
 	'use strict';
@@ -90,56 +111,4 @@
 		prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-angle-left\'></i></button>',
 		nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-angle-right\'></i></button>'
 	});
-
-	/* // news galerie
-	const images = document.querySelectorAll('.news-galerie img');
-	document.addEventListener("mousemove", ($event) => {
-		const { clientX } = $event;
-		const percent = calcPercent(clientX);
-		images.forEach((image) => moveImageBackground(image, percent));
-	});
-	
-	function calcPercent(clientX) {
-		return (clientX / window.innerWidth) * 100;
-	}
-	
-	function moveImageBackground(image, percent) {
-		image.animate(
-			{
-				objectPosition: `${percent}% 0%`
-			},
-			{ fill: "forwards", duration: 250, easing: "ease-in" }
-		);
-	} */
-	
 })(jQuery);
-$(function() {
-	$('a[rel*="lightbox"]').magnificPopup({
-		type: 'image',
-		tLoading: 'Lade Bild...',
-		tClose: 'Schließen (Esc)',
-		image: {
-			titleSrc: function(item) {
-				var title = item.el.attr('title');
-				var description = item.el.attr('alt');
-				return ((title)?title:'') + ((description)?'<small>'+ description +'</small>':'');
-			}
-		},
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1],
-			tCounter: '%curr% von %total%',
-			tPrev: 'Zurück (Linke Pfeiltaste)',
-			tNext: 'Vorwärts (Rechte Pfeiltaste)'
-		},
-		callbacks: {
-    
-			buildControls: function() {
-			  // re-appends controls inside the main container
-			  this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
-			}
-			
-		  }
-	});
-});
