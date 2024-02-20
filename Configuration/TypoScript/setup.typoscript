@@ -240,3 +240,16 @@ plugin.tx_news.settings.detail.media.image.lightbox {
     width = 1024
     height = 768
 }
+lib.footerNavigation = HMENU
+lib.footerNavigation {
+    special = directory
+    special.value = {$plugin.tx_logbook_template.settings.footerNavPid}
+    1 = TMENU
+    1 {
+        NO = 1
+        NO.allWrap = &nbsp;|&nbsp;&#8211; |*| &nbsp;|&nbsp;&#8211; |*| &nbsp;|&nbsp;
+    }
+
+
+    wrap = <p class="navLink m-0">|</p>
+}

@@ -65,3 +65,11 @@ plugin.tx_news {
       layoutRootPath = EXT:logbook_template/Resources/Private/Extensions/News/Layouts/
    }
 }
+plugin {
+    tx_logbook_template {
+        settings {
+            # cat=plugin.tx_logbook_template/settings; type=string; label=Footer pID:pID der Footer Navication
+            footerNavPid = 13
+        }
+    }
+}

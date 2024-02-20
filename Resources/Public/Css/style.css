@@ -11745,4 +11745,9 @@ a:hover {
 
 .mfp-s-loading .mfp-arrow {
   display: none;
+}
+
+.footerNavigation .navLink a {
+  margin: 0rem 1rem;
+  color: #888c8e;
 }/*# sourceMappingURL=style.css.map */

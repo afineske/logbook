@@ -674,3 +674,14 @@
  .mfp-s-loading .mfp-arrow { 
   display: none;
 }
+
+.footerNavigation {
+  
+  .navLink {
+    a {
+      margin: 0rem 1rem;
+      color: $text-color-light;
+    
+    }
+  }  
+}
